@@ -158,6 +158,18 @@
     <section id="contactme">
         <div class="contact__container">
             <h1 class="header DM_bold">contact me</h1>
+
+            <form id="myForm" action="https://formspree.io/f/xnnaqovn" method="POST">
+                <div class="form__grid">
+                    <input class="textInput" placeholder="Name" type="text" name="name" minlength="2" size="20" required>
+              
+                    <input class="textInput" placeholder="E-mail" type="email" name="email" minlength="2" size="20" required>
+              
+                    <button type="submit" class="submit__button">send</button>
+                </div>
+
+                <textarea class="messageInput" placeholder="Message" name="message" rows="5" cols="22" required></textarea>
+            </form>
         </div>
     </section>
 
