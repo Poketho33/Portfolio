@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
       activateStars();
     } else {
       document.documentElement.style.setProperty('--light-bg', '#FFFDE8');
-      document.documentElement.style.setProperty('--light-prim', '#FFA088');
+      document.documentElement.style.setProperty('--light-prim', '#A93F3F');
       document.documentElement.style.setProperty('--light-sec', '#FFE0C4');
 
       deactivateStars();
