@@ -173,12 +173,12 @@ html{
 .hero__ray2 {
     transform: rotate(-42deg);
     top: 75%;
-    right: 35%;
+    right: calc(35% - (1300px - 100%)*0.138);
 }
   
 .hero__ray3 {
     top: 75%;
-    left: 35%;
+    left: calc(35% - (1300px - 100%)*0.138);
     transform: scaleX(-1) rotate(-42deg);
 }
   
@@ -198,13 +198,13 @@ html{
   
 .hero__ray6 {
     bottom: 75%;
-    right: 35%;
+    right: calc(35% - (1300px - 100%)*0.138);
     transform: scaleY(-1) rotate(-42deg);
 }
   
 .hero__ray7 {
     bottom: 75%;
-    left: 35%;
+    left: calc(35% - (1300px - 100%)*0.138);
     transform: scale(-1, -1) rotate(-42deg);
 }
   
@@ -659,29 +659,60 @@ html{
 
 */
 
-@media (max-width: 1200px) {
-    
-    .hero__ray2 {
-        right: 31%;
+@media (max-width: 850px){
+    .hero__name{
+        font-size: 4rem;
+        line-height: 55px;
     }
-    
-    .hero__ray3 {
-        left: 31%;
-    }
-    
-    .hero__ray6 {
-        right: 31%;
-    }
-    
-    .hero__ray7 {
-        left: 31%;
+
+    .hero__container{
+        grid-template-columns: 280px 320px;
     }
 }
+
 
 @media (max-width: 700px){
     #nav__logo{
         left: 60px;
         transform: translateY(-50%);
+    }
+
+    .hero__container{
+        grid-template-columns: 400px;
+        grid-template-rows: 50px auto;
+    }
+
+    .hero__name{
+        font-size: 3rem;
+    }
+
+    .hero__descr{
+        text-align: justify;
+        margin-top: auto;
+    }
+
+    #home{
+        height: 500px;
+    }
+
+    .hero__circ{
+        width: 170px;
+        height: 170px;
+    }
+
+    .hero__ray {
+        width: 530px;
+        height: auto;
+    }
+
+    .hero__ray2, 
+    .hero__ray6 {
+        right: calc(40% - (1300px - 100%)*0.128);
+    }
+
+    .hero__ray3, 
+    .hero__ray7 {
+        left: calc(40% - (1300px - 100%)*0.128);
     }
 }
 
