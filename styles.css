@@ -421,8 +421,8 @@ html{
     padding: 60px 0px;
     width: 90%;
     display: grid;
-    grid-template-columns: 400px 100px auto auto;
-    column-gap: 30px;
+    grid-template-columns: 400px 5% auto auto;
+    column-gap: 2%;
     grid-template-rows: 100px 50px auto 50px;
 }
 
@@ -449,6 +449,7 @@ html{
     height: 100%;
     width: 80%;
     object-fit: cover;
+    border-radius: 15px;
 }
 
 .project__img2 {
@@ -462,6 +463,7 @@ html{
     height: 100%;
     width: 80%;
     object-fit: cover;
+    border-radius: 15px;
 }
 
 
@@ -491,6 +493,7 @@ html{
     background-color: var(--light-sec);
     max-width: 1300px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .tools__container{
@@ -504,6 +507,7 @@ html{
 .tools__items__container{
     display: flex;
     align-items: center;
+    margin-left: 60px;
 }
 
 .tools__item{
@@ -534,7 +538,7 @@ html{
     padding-bottom: 80px;
     background-color: var(--light-bg);
     max-width: 1300px;
-    margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .contact__container{
@@ -544,17 +548,11 @@ html{
 }
 
 #myForm{
-    display: flex;
-    flex-direction: row;
-    gap: 100px;
-    margin-top: 35px;
-}
-
-.form__grid{
-    height: 300px;
     display: grid;
-    grid-template-rows: 25% 25% 15% 15%;
-    gap: 20px;
+    grid-template-columns: 350px 350px;
+    grid-template-rows: 75px 75px 50px 15%; 
+    gap: 20px 70px;
+    margin-top: 35px;
 }
 
 .textInput{
@@ -584,7 +582,7 @@ html{
 .submit__button:hover{
     background-color: var(--light-prim);
     color: var(--light-bg);
-    border: none;
+    border: solid 1px transparent;
 }
 
 .messageInput{
@@ -605,6 +603,8 @@ html{
     font-size: 1.2rem;
     outline: none;
     resize: vertical;
+
+    grid-area: 1/2/4/3;
 }
 
 
@@ -640,7 +640,7 @@ html{
     line-height: 70px;
     position: absolute;
     right: 60px;
-    bottom: 30px;
+    bottom: 40px;
     color: var(--light-bg);
     width: 300px;
 }
@@ -667,6 +667,58 @@ html{
 
     .hero__container{
         grid-template-columns: 280px 320px;
+    }
+
+    .moving_txt__txt {
+        font-size: 4rem;
+    }
+
+    .moving_txt__container {
+        padding: 30px 0;
+    }
+
+    .project{
+        padding: 60px 0px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project__p{
+        grid-area: 3 / 1 / 4 / 2;
+        text-align: justify;
+        width: 500px;
+        margin-bottom: -15px;
+    }
+
+
+    .project__img {
+        display: flex;
+        justify-content: left;
+        align-items: flex-end;
+        width: 400px;
+        padding-bottom: 20px;
+    }
+
+    .project__img2 {
+        display: none;
+    }
+
+    .tools__container{
+        flex-direction: column;
+        margin-left: 0px;
+    }
+
+    #myForm{
+        grid-template-columns: 100%;
+        grid-template-rows: 70px 70px 270px 50px; 
+    }
+
+    .messageInput{
+        min-height: 250px;
+        grid-area: auto;
+        resize: none;
+        overflow-y: auto;
     }
 }
 
