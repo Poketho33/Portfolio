@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Gloock';
-  src: url('/Gloock/Gloock-Regular.ttf') format('truetype');
+  src: url('/Portfolio/Gloock/Gloock-Regular.ttf') format('truetype');
 }
 
 .gloock{
@@ -9,7 +9,7 @@
 
 @font-face {
     font-family: 'DM Sans';
-    src: url('/DM_Sans/static/DMSans-Bold.ttf') format('truetype');
+    src: url('/Portfolio/DM_Sans/static/DMSans-Bold.ttf') format('truetype');
     font-weight: bold;
 }
 
