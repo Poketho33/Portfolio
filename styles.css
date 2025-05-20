@@ -46,6 +46,9 @@ html{
     transition: background-color var(--trans-dur) ease;
 }
 
+h1 {
+    font-size: 2rem;
+}
 
 /* 
     Navbar
