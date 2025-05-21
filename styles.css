@@ -522,7 +522,7 @@ h1 {
 }
 
 .tools__item{
-    width: var(--padding-offset);
+    width: 60px;
     height: auto;
     margin-right: var(--padding-offset);
     opacity: 85%;
@@ -696,9 +696,8 @@ h1 {
     }
 
     .project__p{
-        grid-area: 3 / 1 / 4 / 2;
-        text-align: justify;
-        width: 500px;
+        grid-area: none;
+        width: 80%;
         margin-bottom: -15px;
     }
 
