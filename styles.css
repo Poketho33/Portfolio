@@ -413,6 +413,7 @@ h1 {
     background-color: var(--light-bg);
     max-width: 1300px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .projects__container{
@@ -601,13 +602,11 @@ h1 {
     min-height: 300px;
     background-color: transparent;
     color: var(--blck-txt);
-    border: auto;
     z-index: 20;
     box-sizing: border-box;
     display: inline-block;
     border: solid 1px var(--blck-txt);
     border-radius: 25px;
-    transition: border-color 0.3s ease;
 
     padding: 20px 25px 15px 25px;
     width: 350px;
@@ -795,6 +794,10 @@ h1 {
       --padding-offset: 30px;
     }
 
+    .header{
+        font-size: 3rem;
+    }
+
     .hero__container{
         grid-template-rows: auto auto;
     }
@@ -808,15 +811,22 @@ h1 {
         font-size: 3rem;
         line-height: 40px;
     }
+
+    .textInput{
+        font-size: 1rem;
+        padding: 0px 20px 0px 20px;
+        width: 90%;
+    }
+
+    .messageInput{
+        padding: 20px 20px 15px 20px;
+        width: 100%;
+        font-size: 1rem;
+    } 
+
+    .submit__button{
+        font-size: 1rem;
+        padding: 0px 20px 0px 20px;
+        width: 30%;
+    }
 }
-
-
-/* .footer__name{ */
-    /* font-size: 5rem; */
-    /* line-height: 70px; */
-    /* position: absolute; */
-    /* right: var(--padding-offset); */
-    /* bottom: 40px; */
-    /* color: var(--light-bg); */
-    /* width: 300px; */
-/* } */
