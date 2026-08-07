@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Clicker_Script, Doto } from "next/font/google";
 
 import Nav from "@/components/nav";
 
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Fonts
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "700"]
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const clicker_script = Clicker_Script({
+  variable: "--font-clicker-script",
   subsets: ["latin"],
+  weight: ["400"]
 });
 
+const doto = Doto({
+  variable: "--font-doto",
+  subsets: ["latin"],
+  weight: ["700"],
+  // roundness: "100"
+});
+
+// Metadata
 export const metadata: Metadata = {
   title: "Thomas Eleveld - Portfolio",
   description: "Portfolio of Thomas Eleveld, web and game developer",
@@ -30,6 +41,7 @@ export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${clicker_script.variable} ${doto.variable} antialiased`}
       >
         <Nav />
         {children}
