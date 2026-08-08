@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${clicker_script.variable} ${doto.variable} antialiased`}
+        className={`${inter.variable} ${clicker_script.variable} ${doto.variable} antialiased scroll-smooth`}
       >
         <Nav />
         {children}

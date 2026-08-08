@@ -1,3 +1,4 @@
+import Link from 'next/link'
 
 export default function Nav() {
     return (
@@ -5,13 +6,16 @@ export default function Nav() {
             <div className="flex justify-between items-center">
                 <a href="#home" id="nav__logo" className="font-clicker-script text-3xl">TE</a>
 
-                <ul className="flex gap-4 items-center justify-center font-doto text-lg">
-                    <li>
-                        <a href="#projects" className="">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#contactme" className="">Contact</a>
-                    </li>
+                <ul className="flex gap-6 items-center justify-center font-doto text-lg">
+                    <Link href="#projects" className="">
+                        Projects
+                    </Link>
+                    <Link href="/photography" className="">
+                        Photography
+                    </Link>
+                    <Link href="#contactme" className="">
+                        Contact
+                    </Link>
                 </ul>
             </div>
         </nav>
