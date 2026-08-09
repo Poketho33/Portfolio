@@ -4,21 +4,10 @@
   --background: #ffffff;
   --background-2: #d5d4d4;
   --foreground: #171717;
-  --secondary: #882b2b;
+  --secondary: #7C92FF;
 }
 
-/* 1. Standard CSS Keyframes */
-/* @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes move {
-  0% { opacity: 0; transform: translateX(0); }
-  70% { opacity: 1; }
-  100% { opacity: 0; transform: translateX(-800px); }
-} */
-
+/* Keyframe animations */
 @keyframes star {
   0% { opacity: 0; transform: translate(0,0) rotate(0deg); }
   70% { opacity: 1; }

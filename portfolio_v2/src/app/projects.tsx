@@ -5,6 +5,7 @@ export default function Projects() {
     <section id="projects" className="w-full py-10">
       <div className="flex flex-col items-center">
           <h1 className="font-doto text-lg">Projects</h1>
+          
           {/* Project: Time among the stars */}
           <div className="h-[500px] w-full flex items-start justify-end flex-col relative px-16">
               <p className="text-7xl font-bold text-center absolute w-full left-1/2 top-1/2 -translate-1/2 z-30">Time Among The Stars</p>
@@ -24,6 +25,6 @@ export default function Projects() {
 
 
       </div>
-  </section>
+    </section>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Clicker_Script, Doto } from "next/font/google";
 
 import Nav from "@/components/nav";
+import Footer from '@/components/footer';
 
 import "./globals.css";
 
@@ -48,12 +49,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${clicker_script.variable} ${doto.variable} antialiased scroll-smooth`}
+        className={`${inter.variable} ${clicker_script.variable} ${doto.variable} antialiased`}
       >
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );

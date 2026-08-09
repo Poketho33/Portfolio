@@ -4,6 +4,7 @@ import HeroSection from './hero';
 import QuoteSection from './quote';
 import ProjectsSection from './projects';
 import ToolsSection from './tools';
+import ContactSection from './contact';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <QuoteSection/>
       <ProjectsSection/>
       <ToolsSection/>
+      <ContactSection/>
     </>
   );
 }
