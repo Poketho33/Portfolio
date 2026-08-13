@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, FormEvent, KeyboardEvent } from 'react';
+import { useState, SubmitEvent, KeyboardEvent } from 'react';
 
 const STEPS = [
   { id: 0, label: "First, what's your name?", name: 'name', type: 'text', placeholder: 'John Doe' },
@@ -10,6 +10,7 @@ const STEPS = [
 
 export default function Contact() {
     const [activeStep, setActiveStep] = useState(0);
+    const [response, setResponse] = useState("");
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -34,7 +35,6 @@ export default function Contact() {
         }
     };
 
-    // Keyboard handler for Enter key
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         if (e.key === 'Enter') {
             const isTextArea = e.currentTarget.tagName === 'TEXTAREA';
@@ -55,20 +55,32 @@ export default function Contact() {
         }
     };
 
-    async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    async function onSubmit(event: SubmitEvent) {
         event.preventDefault();
         setIsSubmitting(true);
+        setResponse("");
 
         try {
-            const response = await fetch('/api/send', {
+            const res = await fetch('/api/send', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
             });
 
-            const data = await response.json();
-            console.log('Submitted successfully:', data);
+            const data = await res.json();
+                if (!res.ok) {
+                // Handle Zod or Brevo errors sent from the server
+                const errorMsg = data.details?.email?.[0] 
+                    || data.error 
+                    || 'Something went wrong';
+                setResponse(`Error: ${errorMsg}`);
+                return;
+            }
+            setResponse('Submitted successfully!');
+            setFormData({ name: '', email: '', message: '' });
+            setActiveStep(0);
         } catch (error) {
+            setResponse('Submission failed. Please check your connection.');
             console.error('Submission failed:', error);
         } finally {
             setIsSubmitting(false);
@@ -90,7 +102,7 @@ export default function Contact() {
                             <div
                                 key={step.id}
                                 className={`h-1 w-full max-w-[200px] transition-colors duration-300 ${
-                                activeStep >= step.id ? 'bg-secondary' : 'bg-foreground'
+                                    activeStep >= step.id ? 'bg-secondary' : 'bg-foreground'
                                 }`}
                             />
                         ))}
@@ -103,14 +115,15 @@ export default function Contact() {
                         {currentStepData.type === 'textarea' ? (
                             <div className="flex flex-col gap-2">
                                 <textarea
-                                name={currentStepData.name}
-                                placeholder={currentStepData.placeholder}
-                                value={formData[currentStepData.name as keyof typeof formData]}
-                                onChange={handleInputChange}
-                                onKeyDown={handleKeyDown}
-                                rows={4}
-                                required
-                                className="w-full border-b-2 border-foreground bg-transparent pl-4 pb-2 outline-none focus:border-primary"
+                                    name={currentStepData.name}
+                                    placeholder={currentStepData.placeholder}
+                                    value={formData[currentStepData.name as keyof typeof formData]}
+                                    onChange={handleInputChange}
+                                    onKeyDown={handleKeyDown}
+                                    rows={4}
+                                    required
+                                    autoFocus
+                                    className="w-full border-b-2 border-foreground bg-transparent pl-4 pb-2 outline-none focus:border-primary"
                                 />
                                 <span className="text-xs text-foreground/50 pl-4">
                                 Press <kbd className="font-sans px-1 bg-foreground/10 rounded">Ctrl</kbd> + <kbd className="font-sans px-1 bg-foreground/10 rounded">Enter</kbd> to submit
@@ -125,11 +138,13 @@ export default function Contact() {
                                 onChange={handleInputChange}
                                 onKeyDown={handleKeyDown}
                                 required
-                                autoFocus // Automatically focus input when changing steps
                                 className="w-2/5 border-b-2 border-foreground bg-transparent pl-4 pb-2 outline-none focus:border-primary"
                             />
                         )}
                     </div>
+
+                    {/* Response handling */}
+                    <p className="text-secondary">{response}</p>
 
                     {/* Controls */}
                     <div className="flex items-center gap-4">
@@ -175,7 +190,6 @@ export default function Contact() {
                             </button>
                         )}
                     </div>
-
                 </form>
             </div>
         </section>
