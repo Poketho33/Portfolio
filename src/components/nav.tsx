@@ -7,13 +7,13 @@ export default function Nav() {
                 <a href="/#home" id="nav__logo" className="font-clicker-script text-3xl">TE</a>
 
                 <ul className="flex gap-6 items-center justify-center font-doto text-lg">
-                    <Link href="/#projects" className="">
+                    <Link href="/#projects">
                         Projects
                     </Link>
-                    <Link href="/photography" transitionTypes={['slide-in']} className="">
+                    <Link href="/photography">
                         Photography
                     </Link>
-                    <Link href="/#contactme" className="">
+                    <Link href="/#contactme">
                         Contact
                     </Link>
                 </ul>
