@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Nav() {
     return (
-        <nav className="px-12 py-6 fixed z-100 w-full">
+        <nav className="px-12 py-6 fixed top-0 left-0 z-100 w-full">
             <div className="flex justify-between items-center">
                 <a href="/#home" id="nav__logo" className="font-clicker-script text-3xl">TE</a>
 
