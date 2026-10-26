@@ -29,6 +29,7 @@ export default function Hero() {
     useEffect(() => {
         const initialStars = starConfig.map((star) => generateRandomStar(star.id));
         setStars(initialStars);
+        initialStars.map((star) => handleAnimationEnd(star.id));
 
         // Cleanup timers when component unmounts
         return () => {
@@ -42,8 +43,7 @@ export default function Hero() {
             prevStars.map((star) => (star.id === id ? { ...star, isAnimating: false } : star))
         );
 
-        // Schedule respawn after a random delay (0 - 1500ms)
-        const randomDelay = Math.floor(Math.random() * 1500);
+        const randomDelay = Math.floor(Math.random() * 2000);
 
         timerRef.current[id] = setTimeout(() => {
             setStars((prevStars) =>

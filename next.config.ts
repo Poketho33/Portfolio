@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: '**.simpleicons.org',
       },
+      {
+        protocol: 'https',
+        hostname: 'psxoezxhibrwhk1p.public.blob.vercel-storage.com',
+      },
     ],
   },
 };
