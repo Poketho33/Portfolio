@@ -71,8 +71,8 @@ export default function BlogAdminPageClientSide({ images } : clientSideProps) {
                             alt={`Image ${index}`}
                             width={img.width}
                             height={img.height}
-                            className="h-auto w-full rounded"
-                            sizes="(max-width: 768px) 100vw, 33vw"
+                            className="rounded-xl"
+                            sizes="(max-width: 768px) 100vw, 28vw"
                         />
                     ))}
                 </div>
